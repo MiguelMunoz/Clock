@@ -2,8 +2,8 @@ date
 
 set -x
 $JAVA_HOME/bin/native-image \
--H:ClassInitialization=java.awt.Component:run_time \
---initialize-at-run-time=`com.neptunedreams.clock.Face,sun.java2d.opengl.OGLRenderQueue \
+-H:+PrintClassInitialization \
+--initialize-at-run-time=com.neptunedreams.clock.Face\
 -H:+ReportExceptionStackTraces \
 -classpath \
 target/clock-1.0-SNAPSHOT.jar \
@@ -25,3 +25,5 @@ com.neptunedreams.clock.GraalClock
 
 # -H:ClassInitialization=com.neptunedreams.clock.GraalClock:run_time \
 # -H:ClassInitialization=sun.java2d.opengl.OGLRenderQueue:run_time \
+# -H:ClassInitialization=java.awt.Component:run_time \
+

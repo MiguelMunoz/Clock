@@ -19,6 +19,7 @@ import javax.swing.WindowConstants;
  *
  * @author Miguel Mu\u00f1oz
  */
+@SuppressWarnings("WeakerAccess")
 public class Face {
 	private static final int GAP = 8;
 	private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
@@ -30,7 +31,8 @@ public class Face {
 		doLaunch();
 	}
 	
-	static void doLaunch() {
+	@SuppressWarnings("WeakerAccess")
+	public static void doLaunch() {
 		//noinspection HardCodedStringLiteral
 		if (!launched.get()) {
 			launched.set(true);
